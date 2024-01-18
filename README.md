@@ -52,6 +52,11 @@ also  uncomment the top code hugging-chat.py and set the env path correctly
 M-X hugging-chat-comint-switch-to-shell-buffer
 ```
 
+or if you just want to use with python do 
+
+```python3
+python hugging-chat.py -p Prompt token.json
+```
 ### API
 
 The following are all common usages of this repo, You may not necessarily use all of them, You can add or delete some as needed :)
