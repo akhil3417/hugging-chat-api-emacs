@@ -22,6 +22,7 @@ Unofficial HuggingChat Python API, extensible for chatbots etc.
 > - Supports for changing LLMs ([#56](https://github.com/Soulter/hugging-chat-api/issues/56)) (v0.0.9)
 
 ## Installation
+
 ```bash
 pip install hugchat
 ```
@@ -29,7 +30,13 @@ or
 ```bash
 pip3 install hugchat
 ```
-
+or if you prefer virtualenv 
+then 
+```bash
+cd hugging-chat-api/
+virtualenv .env 
+pip3 install hugchat
+```
 ## Usage
 
 ### API
