@@ -57,6 +57,11 @@ or if you just want to use with python do
 ```python3
 python hugging-chat.py -p Prompt token.json
 ```
+or 
+
+```python3
+python3 chat.py 
+```
 ### API
 
 The following are all common usages of this repo, You may not necessarily use all of them, You can add or delete some as needed :)
