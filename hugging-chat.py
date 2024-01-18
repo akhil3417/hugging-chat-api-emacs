@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-import os
-import sys
+# uncomment the below code in case you use virtual env and change the path
+# import os
+# import sys
 
-virtualenv_dir = "/home/shiva/tmpexpdir/aigen/.env/"
+# virtualenv_dir = "path to you env"
 
-# Setting up the environment variables
-os.environ["PYTHONPATH"] = f":{virtualenv_dir}/lib/python3.12/site-packages:"
-os.environ["LD_LIBRARY_PATH"] = f"{virtualenv_dir}/lib/"
+# # Setting up the environment variables
+# os.environ["PYTHONPATH"] = f":{virtualenv_dir}/lib/python3.12/site-packages:"
+# os.environ["LD_LIBRARY_PATH"] = f"{virtualenv_dir}/lib/"
 
-sys.path.insert(0, virtualenv_dir + "/lib/python3.12/site-packages")
+# sys.path.insert(0, virtualenv_dir + "/lib/python3.12/site-packages")
 
 import argparse
 import json

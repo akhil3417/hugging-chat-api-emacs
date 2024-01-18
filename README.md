@@ -43,7 +43,14 @@ then grab the token , first open get_token.py and then enter the id and pass in 
 python get_token.py
 ```
 then rename the generated token to token.json
+
+also  uncomment the top code hugging-chat.py and set the env path correctly
+
 ## Usage
+
+```emacs-lisp
+M-X hugging-chat-comint-switch-to-shell-buffer
+```
 
 ### API
 
