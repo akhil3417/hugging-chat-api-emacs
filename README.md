@@ -37,6 +37,12 @@ cd hugging-chat-api/
 virtualenv .env 
 pip3 install hugchat
 ```
+then grab the token , first open get_token.py and then enter the id and pass in the fields , then run: 
+
+```bash
+python get_token.py
+```
+then rename the generated token to token.json
 ## Usage
 
 ### API
