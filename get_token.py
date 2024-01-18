@@ -3,7 +3,7 @@ sign = Login(email, passwd)
 cookies = sign.login()
 
 # Save cookies to the local directory
-cookie_path_dir = "./usercookies"
+cookie_path_dir = "./"
 sign.saveCookiesToDir(cookie_path_dir)
 
 # Load cookies when you restart your program:
