@@ -26,42 +26,32 @@ Unofficial HuggingChat Python API, extensible for chatbots etc.
 ```bash
 pip install hugchat
 ```
-or
-```bash
-pip3 install hugchat
-```
+
 or if you prefer virtualenv 
 then 
 ```bash
 cd hugging-chat-api/
-virtualenv .env 
+virtualenv .env
+. .env/bin/activate
 pip3 install hugchat
 ```
-then grab the token , first open get_token.py and then enter the id and pass in the fields , then run: 
+
+#Emacs setup:
+
+Grab the token first
+- change the id and pass in the fields accordingly in get_token.py, then run: 
 
 ```bash
 python get_token.py
 ```
-then rename the generated token to token.json
+rename it to token.json(def token filename in hugging-chat.py for emacs)
 
-also  uncomment the top code hugging-chat.py and set the env path correctly
-
-## Usage
+## Usage with emacs
 
 ```emacs-lisp
 M-X hugging-chat-comint-switch-to-shell-buffer
 ```
 
-or if you just want to use with python do 
-
-```python3
-python hugging-chat.py -p Prompt token.json
-```
-or 
-
-```python3
-python3 chat.py 
-```
 ### API
 
 The following are all common usages of this repo, You may not necessarily use all of them, You can add or delete some as needed :)
