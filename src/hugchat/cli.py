@@ -59,8 +59,16 @@ def handle_command(chatbot: ChatBot, userInput: str) -> None:
         new_conversation = chatbot.new_conversation(switch_to=True)
         print(f"# Created and switched to a new conversation\n# New conversation ID: {new_conversation.id}")
 
-    elif command == "ids":
-        print(f"# Conversations: {[conversation.id for conversation in chatbot.get_conversation_list()]}")
+    elif command == "/ids":
+        ids = chatbot.get_conversation_list()
+        if userInput == "/ids all":
+            ids = chatbot.get_remote_conversations(replace_conversation_list=True)
+        try:
+            ids = chatbot.get_remote_conversations(replace_conversation_list=True)
+            conversation_dict = {i+1: id_string for i, id_string in enumerate(ids)}
+            print("\n".join([f"{i}: {id_string}" for i, id_string in conversation_dict.items()]))
+        except Exception as e:
+            print(f"Error: {e}")
 
     elif command == "switch":
         id = chatbot.get_conversation_list()
