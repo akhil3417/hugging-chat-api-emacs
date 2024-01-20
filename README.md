@@ -36,7 +36,7 @@ virtualenv .env
 pip3 install hugchat
 ```
 
-#Emacs setup:
+# Emacs setup:
 
 Grab the token first
 - change the id and pass in the fields accordingly in get_token.py, then run: 
