@@ -288,7 +288,7 @@ Continuing to use means that you accept the above point(s)
         print(f"Switched to Previous conversation with ID: {target_id}\n")
 
     while True:
-        userInput = input("> ").strip()
+        userInput = input("Prompt: ").strip()
 
         if len(userInput) == 0:
             continue
@@ -315,7 +315,7 @@ Continuing to use means that you accept the above point(s)
                 res = chatbot.chat(userInput)
                 stream_response(res)
             else:
-                print("< " + chatbot.chat(userInput).wait_until_done().strip())
+                print("AI:" + chatbot.chat(userInput).wait_until_done().strip())
 
 if __name__ == '__main__':
     cli()
