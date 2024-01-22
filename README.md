@@ -149,6 +149,8 @@ Commands in cli mode:
 - `/switch` : Shows a list of all conversations' info in *current session*. Then you can choose one to switch to.
 - `/switch all`: Shows a list of all conversations' info in *your account*. Then you can choose one to switch to. (not recommended if your account has a lot of conversations,)
 - `/switch all <num>`: Same as above but displays the specified number of conversations.
+- `/prompt` : Shows a list of available predefined system prompts to choose from.
+- `/prompt id` : Chooses a specific system prompt by its ID.
 - `/del <id>` : Deletes the ID number or ID string passed. Will not delete active session.
 - `/delete-all` : Deletes all the conversations for the logged in user.
 - `/clear` : Clear the terminal.
