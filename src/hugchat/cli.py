@@ -69,7 +69,7 @@ def handle_command(chatbot: ChatBot, userInput: str) -> None:
 
     elif command == "switch":
         try:
-            if userInput == "/switch all":
+            if arguments[0] == "all":
                 id = chatbot.get_remote_conversations(replace_conversation_list=True)
             else:
                 id = chatbot.get_conversation_list()
@@ -237,7 +237,7 @@ Official Site: https://huggingface.co/chat
 Continuing to use means that you accept the above point(s)
     """)
 
-    EMAIL, FORCE_INPUT_PASSWORD, stream_output , continued_conv = get_arguments()
+    EMAIL, FORCE_INPUT_PASSWORD, stream_output, continued_conv = get_arguments()
 
     # Check if the email is in the environment variables or given as an argument
     if EMAIL is None:
@@ -273,13 +273,17 @@ Continuing to use means that you accept the above point(s)
 
     if continued_conv:
         ids = chatbot.get_remote_conversations(replace_conversation_list=True)
-        conversation_dict = {}
-        for i, id_string in enumerate(ids, start=1):
-           conversation_dict[i] = id_string
+
+        conversation_dict = dict(enumerate(ids, start=1))
+
+        # delete the conversation that was initially created on chatbot init
         target_id = conversation_dict[1]
         chatbot.delete_conversation(target_id)
+
+        # switch to the most recent remote conversation
         target_id = conversation_dict[2]
         chatbot.change_conversation(target_id)
+
         print(f"Switched to Previous conversation with ID: {target_id}\n")
 
     while True:
