@@ -46,6 +46,7 @@ def handle_command(chatbot: ChatBot, userInput: str) -> None:
 /ids: Shows a list of all ID numbers and ID strings in *current session*.
 /switch: Shows a list of all conversations' info in *current session*. Then you can choose one to switch to.
 /switch all: Shows a list of all conversations' info in *your account*. Then you can choose one to switch to. (not recommended if your account has a lot of conversations)
+/switch all <num>: Same as above but displays the specified number of conversations.
 /prompt : Shows a list of available predefined system prompts to choose from.
 /prompt id : Chooses a specific system prompt by its ID.
 /del <id>: Deletes the ID number or ID string passed. Will not delete active session.
