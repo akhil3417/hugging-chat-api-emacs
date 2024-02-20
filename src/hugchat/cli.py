@@ -43,7 +43,8 @@ def handle_command(chatbot: ChatBot, userInput: str) -> None:
     if command == "help" or command == "commands":
         print("""
 /new: Create and switch to a new conversation.
-/ids: Shows a list of all ID numbers and ID strings in *current session*.
+/info: Get info of current conversation.
+/ids or ids all: Shows a list of currrent/all ID numbers and ID strings in *current session*.
 /switch: Shows a list of all conversations' info in *current session*. Then you can choose one to switch to.
 /switch all: Shows a list of all conversations' info in *your account*. Then you can choose one to switch to. (not recommended if your account has a lot of conversations)
 /switch all <num>: Same as above but displays the specified number of conversations.
@@ -65,8 +66,22 @@ def handle_command(chatbot: ChatBot, userInput: str) -> None:
         new_conversation = chatbot.new_conversation(switch_to=True)
         print(f"# Created and switched to a new conversation\n# New conversation ID: {new_conversation.id}")
 
+    elif command == "info":
+        info = chatbot.get_conversation_info()
+        print(f"ID   :{info.id}\nTitle: {info.title}...\nModel: {info.model}.\nSystem Prompt: {info.system_prompt.split(',')[0]}\n--------------------------------------------------------")
+
     elif command == "ids":
-        print(f"# Conversations: {[conversation.id for conversation in chatbot.get_conversation_list()]}")
+        try:
+            if userInput == "/ids all":
+                ids = chatbot.get_remote_conversations(replace_conversation_list=True)
+            else:
+                ids = chatbot.get_conversation_list()
+
+            for i, id_string in enumerate(ids, start=1):
+                info = chatbot.get_conversation_info(id_string)
+                print(f"{i}: ID: {info.id}\nTitle: {info.title}...\nModel: {info.model}.\nSystem Prompt: {info.system_prompt.split(',')[0]}\n--------------------------------------------------------")
+        except Exception as e:
+            print(f"Error: {e}")
 
     elif command == "switch":
         try:
